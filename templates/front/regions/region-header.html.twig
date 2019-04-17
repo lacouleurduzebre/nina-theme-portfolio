@@ -1,0 +1,11 @@
+<header class="header_front">
+    <div class="flex-container">
+        <div id="burger"><i class="fas fa-bars"></i> {{ "Menu"|trans|upper }}</div>
+        {{ groupes(region.id) }}
+    </div>
+</header>
+{% if page is defined and blocAnnexe(page, "Bandeau", false) %}
+    <div class="blocBandeau mw1140p center">
+        <img src="{{ blocAnnexe(page, "Bandeau", false) }}" alt="{{ page.titre }}">
+    </div>
+{% endif %}

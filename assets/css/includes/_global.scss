@@ -1,0 +1,41 @@
+//Ariane
+#ariane{
+  font-size: 1.4rem;
+  margin: 2rem 0;
+  &, a{
+    color: #6b6b6b;
+  }
+}
+
+//Boutons
+.bouton{
+  background-color: $white;
+  color: $color-brand;
+  display: table;
+  margin: 2rem auto 0 auto;
+  padding: 1.5rem 2rem;
+  border: 2px solid;
+  text-decoration: none;
+  transition: all .2s;
+  &:hover{
+    background-color: $color-brand;
+    color: $white;
+    text-decoration: none;
+  }
+}
+
+//Textes étroits
+.titre-page, .blocTitre, .blocTexte, #ariane, .infos-page{
+  padding: 0 5rem;
+}
+
+//Pagination
+.pagination{
+  margin: 3rem 0;
+  ul{
+    justify-content: center;
+  }
+  li{
+    margin: 0 .5rem;
+  }
+}

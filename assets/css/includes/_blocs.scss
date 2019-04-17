@@ -1,0 +1,287 @@
+//Annuaire
+.blocAnnuaire{
+  margin-bottom: 5rem;
+}
+
+.blocAnnuaire-utilisateur-image{
+  height: 25rem;
+  width: 25rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  img{
+    object-fit: cover;
+  }
+  svg{
+    font-size: 10rem;
+  }
+  + p{
+    text-transform: uppercase;
+  }
+  ~ p{
+    text-align: center;
+  }
+}
+
+//Bandeau
+.blocBandeau{
+  height: 60rem;
+  overflow: hidden;
+  img{
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+//Catégorie et Rubrique
+.blocCategorie-page, .blocRubrique-page{
+  margin-bottom: 5rem;
+  h2{
+    font-size: 3rem;
+    font-family: 'Lato';
+    text-transform: none;
+  }
+}
+
+//Formulaire
+.blocFormulaire-formulaire{
+  > div{
+    margin-bottom: 2rem;
+    width: 50%;
+  }
+  .bouton{
+    display: inline-block;
+  }
+  p[class^="erreur"]{
+    padding-left: 1rem;
+    font-size: 1.6rem;
+    &:before{
+      content: 'X';
+      color: #ff0000;
+      margin-right: .5rem;
+    }
+  }
+}
+
+//Galerie
+.blocGalerie > div{
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 2rem;
+  > div{
+    max-height: 30rem;
+  }
+  > div:nth-of-type(8n + 1){
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-end: span 2;
+    max-height: 62rem;
+  }
+  > div:nth-of-type(8n + 2){
+    grid-column-start: 3;
+    grid-column-end: 7;
+    grid-row-end: span 1;
+  }
+  > div:nth-of-type(8n + 3){
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-end: span 1;
+  }
+  > div:nth-of-type(8n + 4){
+    grid-column-start: 5;
+    grid-column-end: 7;
+    grid-row-end: span 1;
+  }
+  > div:nth-of-type(8n + 5){
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-end: span 1;
+  }
+  > div:nth-of-type(8n + 6){
+    grid-column-start: 4;
+    grid-column-end: 7;
+    grid-row-end: span 1;
+  }
+  > div:nth-of-type(8n + 7){
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-end: span 1;
+  }
+  > div:nth-of-type(8n + 8){
+    grid-column-start: 3;
+    grid-column-end: 7;
+    grid-row-end: span 1;
+  }
+}
+
+.blocGalerie{
+  margin-bottom: 5rem;
+  a{
+    display: block;
+    height: 100%;
+  }
+  img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+//Grille
+.blocGrille{
+  h3{
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    text-align: center;
+  }
+}
+
+.blocGrille-case-image{
+  width: 25rem;
+  height: 25rem;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 0 auto 2rem;
+  img{
+    object-fit: cover;
+  }
+}
+
+//LEI
+.ficheLEI{
+  margin-bottom: 5rem;
+  &-image, &-sansImage{
+    height: 20rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg{
+      font-size: 10rem;
+      opacity: .5;
+    }
+  }
+  &-titre{
+    font-size: 2.1rem;
+    margin-top: 1rem;
+  }
+  &-description{
+    font-size: 1.6rem;
+  }
+}
+
+.pageFiche{
+  &-image{
+    max-height: 30rem;
+    overflow: hidden;
+    margin-bottom: 3rem;
+  }
+}
+
+//Recherche
+.blocRecherche{
+  form{
+    position: relative;
+    display: inline-block;
+  }
+  input{
+    max-width: 35rem;
+    padding: 1rem 2rem;
+  }
+  button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 0;
+    height: 100%;
+    padding: 1rem 2rem;
+  }
+}
+
+//Réseaux sociaux
+.blocReseauxSociaux{
+  font-size: 2rem;
+  a{
+    margin: 0 .5rem;
+  }
+}
+
+//Slider
+.blocSlider{
+  .slick-slide{
+    display: flex;
+    align-items: center;
+    max-height: 40rem;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+  }
+  img{
+    width: 100%;
+  }
+}
+
+.blocSlider-slide--texte{
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: rgba($black, .5);
+}
+
+.slick-prev, .slick-next{
+  z-index: 100;
+}
+
+.slick-prev{
+  left: 1rem !important;
+  &:before{
+    content: url('../img/flecheg.png') !important;
+    opacity: 1 !important;
+  }
+}
+
+.slick-next{
+  right: 1rem !important;
+  &:before{
+    content: url('../img/fleched.png') !important;
+    opacity: 1 !important;
+  }
+}
+
+.slick-dots li button::before, .slick-dots li.slick-active button::before{
+  color: $white !important;
+}
+
+.slick-dots li button::before{
+  font-size: 1.5rem !important;
+}
+
+//Texte
+.blocTexte{
+  margin-bottom: 5rem;
+}
+
+//Titre
+.blocTitre{
+  margin-bottom: 2rem;
+}
+
+//Type de catégorie
+.blocTypeCategorie{
+  margin-bottom: 5rem;
+}
+
+//Vignette
+.blocAnnexeVignette{
+  height: 30rem;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  img{
+    object-fit: cover;
+  }
+}

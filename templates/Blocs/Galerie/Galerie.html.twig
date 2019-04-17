@@ -1,0 +1,20 @@
+<div id="galerie{{ bloc.id }}">
+    {% for elementGalerie in bloc.contenu.images|sortBy('position') %}
+        <div>
+            <a
+            class="galerie"
+            data-fancybox="galerie{{ bloc.id }}"
+            data-caption="
+                {% if elementGalerie.image.titre is not empty %}
+                    <p><strong>{{ elementGalerie.image.titre }}</strong></p>
+                {% endif %}
+                {% if elementGalerie.image.description is not empty %}
+                    <p>{{ elementGalerie.image.description }}</p>
+                {% endif %}
+            "
+            href="{{ elementGalerie.image.image }}">
+                <img src="{{ elementGalerie.image.image }}" {% if elementGalerie.image.titre is not empty %}alt="{{ elementGalerie.image.titre }}"{% endif %} {% if elementGalerie.image.description is not empty %}title="{{ elementGalerie.image.description }}"{% endif %}>
+            </a>
+        </div>
+    {% endfor %}
+</div>

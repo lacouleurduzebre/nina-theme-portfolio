@@ -1,0 +1,94 @@
+//Menu principal
+.header_front{
+  padding: 1rem 4rem;
+  .blocMenu{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%;
+    max-width: 50rem;
+    min-height: 100vh;
+    background-color: rgba(32, 32, 32, 0.9);
+    .connected &{
+      top: 3.8rem;
+    }
+  }
+}
+
+.header_front .blocMenu{
+  ul, li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  ul{
+    list-style: none;
+    padding: 0;
+  }
+  a{
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0 0 3rem 0;
+    position: relative;
+    margin-top: 3rem;
+    &:after{
+      position: absolute;
+      bottom: 0;
+      left: calc(50% - 2.5rem);
+      content: '';
+      width: 5rem;
+      background-image: url('../img/ligne.png');
+      height: 1px;
+      transition: all .3s;
+    }
+    &:hover:after{
+      width: 10rem;
+      left: calc(50% - 5rem);
+    }
+  }
+}
+
+//Burger
+#burger{
+  cursor: pointer;
+  &.actif{
+    z-index: 1000;
+    position: relative;
+    + div .blocMenu{
+      padding: 10rem 1rem;
+      display: block;
+    }
+  }
+}
+
+//Groupe de blocs header
+.header_front .groupeBlocs{
+  display: flex;
+  flex: 1;
+}
+
+//Logo
+.blocLogoSite{
+  margin: auto;
+  img{
+    max-height: 9rem;
+  }
+}
+
+//Menu des langues
+.menuLangues{
+  display: flex;
+  list-style: none;
+  padding: 0;
+  li{
+    margin: 0 1rem;
+    &.active a{
+      text-decoration: underline;
+    }
+  }
+  a{
+    text-decoration: none;
+  }
+}
