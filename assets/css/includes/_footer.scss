@@ -11,7 +11,7 @@ footer{
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 6rem;
+  padding: 2rem 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,8 +29,15 @@ footer .blocMenu{
     list-style: none;
     padding: 0;
     justify-content: center;
+    text-align: center;
+    @include respond-to("small"){
+      flex-direction: column;
+    }
     li{
       margin: 0 3rem;
+      @include respond-to("small"){
+        margin: 1rem 0;
+      }
     }
   }
 }

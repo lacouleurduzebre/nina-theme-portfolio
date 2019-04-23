@@ -3084,6 +3084,10 @@ button:focus {
   display: none;
 }
 
+h2, h3 {
+  line-height: 1.2;
+}
+
 #ariane {
   font-size: 1.4rem;
   margin: 2rem 0;
@@ -3102,14 +3106,43 @@ button:focus {
   text-decoration: none;
   transition: all 0.2s;
 }
+@media (max-width: 575px) {
+  .bouton {
+    margin: 2rem 0 0;
+  }
+}
 .bouton:hover {
   background-color: #202020;
   color: #fff;
   text-decoration: none;
 }
 
+.titre-page {
+  line-height: 1.1;
+  margin-bottom: 3rem;
+}
+
 .titre-page, .blocTitre, .blocTexte, #ariane, .infos-page {
   padding: 0 5rem;
+}
+@media (max-width: 767px) {
+  .titre-page, .blocTitre, .blocTexte, #ariane, .infos-page {
+    padding: 0 3rem;
+  }
+}
+@media (max-width: 575px) {
+  .titre-page, .blocTitre, .blocTexte, #ariane, .infos-page {
+    padding: 0 1rem;
+  }
+}
+
+main > div {
+  width: 100%;
+}
+@media (max-width: 1199px) {
+  main {
+    padding: 0 1rem;
+  }
 }
 
 .pagination {
@@ -3118,12 +3151,22 @@ button:focus {
 .pagination ul {
   justify-content: center;
 }
+@media (max-width: 575px) {
+  .pagination ul {
+    flex-direction: row;
+  }
+}
 .pagination li {
   margin: 0 0.5rem;
 }
 
 .header_front {
   padding: 1rem 4rem;
+}
+@media (max-width: 575px) {
+  .header_front {
+    padding: 1rem;
+  }
 }
 .header_front .blocMenu {
   display: none;
@@ -3134,6 +3177,7 @@ button:focus {
   max-width: 50rem;
   min-height: 100vh;
   background-color: rgba(32, 32, 32, 0.9);
+  z-index: 10;
 }
 .connected .header_front .blocMenu {
   top: 3.8rem;
@@ -3147,12 +3191,13 @@ button:focus {
 .header_front .blocMenu ul {
   list-style: none;
   padding: 0;
+  text-align: center;
 }
 .header_front .blocMenu a {
   text-transform: uppercase;
   text-decoration: none;
   display: inline-block;
-  padding: 0 0 3rem 0;
+  padding: 0 0 1.5rem 0;
   position: relative;
   margin-top: 3rem;
 }
@@ -3182,6 +3227,21 @@ button:focus {
   padding: 10rem 1rem;
   display: block;
 }
+@media (max-width: 575px) {
+  #burger.actif + div .blocMenu {
+    padding: 5rem 1rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .header_front > .flex-container, .header_front > .flex-container--row,
+.header_front > .flex-row, .header_front > .flex-container--column,
+.header_front > .flex-column, .header_front > .flex-container--row-reverse,
+.header_front > .flex-row-reverse, .header_front > .flex-container--column-reverse,
+.header_front > .flex-column-reverse {
+    flex-direction: row;
+  }
+}
 
 .header_front .groupeBlocs {
   display: flex;
@@ -3194,11 +3254,25 @@ button:focus {
 .blocLogoSite img {
   max-height: 9rem;
 }
+@media (max-width: 767px) {
+  .blocLogoSite img {
+    max-width: 9rem;
+  }
+}
 
 .menuLangues {
   display: flex;
   list-style: none;
   padding: 0;
+}
+@media (max-width: 575px) {
+  .menuLangues.flex-container, .menuLangues.flex-container--row,
+.menuLangues.flex-row, .menuLangues.flex-container--column,
+.menuLangues.flex-column, .menuLangues.flex-container--row-reverse,
+.menuLangues.flex-row-reverse, .menuLangues.flex-container--column-reverse,
+.menuLangues.flex-column-reverse {
+    flex-direction: row;
+  }
 }
 .menuLangues li {
   margin: 0 1rem;
@@ -3222,7 +3296,7 @@ footer {
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 6rem;
+  padding: 2rem 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3240,9 +3314,20 @@ footer .blocMenu ul {
   list-style: none;
   padding: 0;
   justify-content: center;
+  text-align: center;
+}
+@media (max-width: 575px) {
+  footer .blocMenu ul {
+    flex-direction: column;
+  }
 }
 footer .blocMenu ul li {
   margin: 0 3rem;
+}
+@media (max-width: 575px) {
+  footer .blocMenu ul li {
+    margin: 1rem 0;
+  }
 }
 
 .scrollTop {
@@ -3272,7 +3357,11 @@ footer .blocMenu ul li {
 
 form > div > div {
   margin-bottom: 2rem;
-  width: 50%;
+}
+@media (min-width: 768px) {
+  form > div > div {
+    width: 50%;
+  }
 }
 
 .blocAnnuaire {
@@ -3287,6 +3376,11 @@ form > div > div {
   align-items: center;
   justify-content: center;
   margin: 0 auto 1rem;
+}
+@media (max-width: 479px) {
+  .blocAnnuaire-utilisateur-image {
+    width: 100%;
+  }
 }
 .blocAnnuaire-utilisateur-image img {
   object-fit: cover;
@@ -3305,6 +3399,21 @@ form > div > div {
   height: 60rem;
   overflow: hidden;
 }
+@media (max-width: 1199px) {
+  .blocBandeau {
+    height: 40rem;
+  }
+}
+@media (max-width: 767px) {
+  .blocBandeau {
+    height: 25rem;
+  }
+}
+@media (max-width: 575px) {
+  .blocBandeau {
+    height: 15rem;
+  }
+}
 .blocBandeau img {
   width: 100%;
   object-fit: cover;
@@ -3321,7 +3430,11 @@ form > div > div {
 
 .blocFormulaire-formulaire > div {
   margin-bottom: 2rem;
-  width: 50%;
+}
+@media (min-width: 768px) {
+  .blocFormulaire-formulaire > div {
+    width: 50%;
+  }
 }
 .blocFormulaire-formulaire .bouton {
   display: inline-block;
@@ -3336,56 +3449,57 @@ form > div > div {
   margin-right: 0.5rem;
 }
 
-.blocGalerie > div {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-gap: 2rem;
+@media (min-width: 576px) {
+  .blocGalerie > div {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 2rem;
+  }
+  .blocGalerie > div > div {
+    max-height: 30rem;
+  }
+  .blocGalerie > div > div:nth-of-type(8n + 1) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-end: span 2;
+    max-height: 62rem;
+  }
+  .blocGalerie > div > div:nth-of-type(8n + 2) {
+    grid-column-start: 3;
+    grid-column-end: 7;
+    grid-row-end: span 1;
+  }
+  .blocGalerie > div > div:nth-of-type(8n + 3) {
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-end: span 1;
+  }
+  .blocGalerie > div > div:nth-of-type(8n + 4) {
+    grid-column-start: 5;
+    grid-column-end: 7;
+    grid-row-end: span 1;
+  }
+  .blocGalerie > div > div:nth-of-type(8n + 5) {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-end: span 1;
+  }
+  .blocGalerie > div > div:nth-of-type(8n + 6) {
+    grid-column-start: 4;
+    grid-column-end: 7;
+    grid-row-end: span 1;
+  }
+  .blocGalerie > div > div:nth-of-type(8n + 7) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-end: span 1;
+  }
+  .blocGalerie > div > div:nth-of-type(8n + 8) {
+    grid-column-start: 3;
+    grid-column-end: 7;
+    grid-row-end: span 1;
+  }
 }
-.blocGalerie > div > div {
-  max-height: 30rem;
-}
-.blocGalerie > div > div:nth-of-type(8n + 1) {
-  grid-column-start: 1;
-  grid-column-end: 3;
-  grid-row-end: span 2;
-  max-height: 62rem;
-}
-.blocGalerie > div > div:nth-of-type(8n + 2) {
-  grid-column-start: 3;
-  grid-column-end: 7;
-  grid-row-end: span 1;
-}
-.blocGalerie > div > div:nth-of-type(8n + 3) {
-  grid-column-start: 3;
-  grid-column-end: 5;
-  grid-row-end: span 1;
-}
-.blocGalerie > div > div:nth-of-type(8n + 4) {
-  grid-column-start: 5;
-  grid-column-end: 7;
-  grid-row-end: span 1;
-}
-.blocGalerie > div > div:nth-of-type(8n + 5) {
-  grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row-end: span 1;
-}
-.blocGalerie > div > div:nth-of-type(8n + 6) {
-  grid-column-start: 4;
-  grid-column-end: 7;
-  grid-row-end: span 1;
-}
-.blocGalerie > div > div:nth-of-type(8n + 7) {
-  grid-column-start: 1;
-  grid-column-end: 3;
-  grid-row-end: span 1;
-}
-.blocGalerie > div > div:nth-of-type(8n + 8) {
-  grid-column-start: 3;
-  grid-column-end: 7;
-  grid-row-end: span 1;
-}
-
 .blocGalerie {
   margin-bottom: 5rem;
 }
@@ -3404,10 +3518,13 @@ form > div > div {
   text-transform: uppercase;
   text-align: center;
 }
+.blocGrille > div > div {
+  padding: 0 1rem;
+  margin-bottom: 3rem;
+}
 
 .blocGrille-case-image {
-  width: 25rem;
-  height: 25rem;
+  width: 90%;
   overflow: hidden;
   border-radius: 50%;
   margin: 0 auto 2rem;
@@ -3426,9 +3543,21 @@ form > div > div {
   align-items: center;
   justify-content: center;
 }
+.ficheLEI-image a, .ficheLEI-sansImage a {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .ficheLEI-image svg, .ficheLEI-sansImage svg {
   font-size: 10rem;
   opacity: 0.5;
+}
+.ficheLEI-image img, .ficheLEI-sansImage img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
 }
 .ficheLEI-titre {
   font-size: 2.1rem;
@@ -3442,6 +3571,9 @@ form > div > div {
   max-height: 30rem;
   overflow: hidden;
   margin-bottom: 3rem;
+}
+.pageFiche-image img {
+  object-fit: cover;
 }
 
 .blocRecherche form {
@@ -3530,12 +3662,20 @@ form > div > div {
   margin-bottom: 5rem;
 }
 
+@media (max-width: 575px) {
+  .blocVideo iframe {
+    max-height: 20rem;
+  }
+}
+
 .blocAnnexeVignette {
   height: 30rem;
   overflow: hidden;
   margin-bottom: 2rem;
 }
 .blocAnnexeVignette img {
+  height: 100%;
+  width: 100%;
   object-fit: cover;
 }
 

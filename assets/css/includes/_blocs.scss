@@ -11,6 +11,9 @@
   align-items: center;
   justify-content: center;
   margin: 0 auto 1rem;
+  @include respond-to("tiny"){
+    width: 100%;
+  }
   img{
     object-fit: cover;
   }
@@ -29,6 +32,15 @@
 .blocBandeau{
   height: 60rem;
   overflow: hidden;
+  @include respond-to("extra-large"){
+    height: 40rem;
+  }
+  @include respond-to("medium"){
+    height: 25rem;
+  }
+  @include respond-to("small"){
+    height: 15rem;
+  }
   img{
     width: 100%;
     object-fit: cover;
@@ -49,7 +61,9 @@
 .blocFormulaire-formulaire{
   > div{
     margin-bottom: 2rem;
-    width: 50%;
+    @include respond-to("medium-up"){
+      width: 50%;
+    }
   }
   .bouton{
     display: inline-block;
@@ -66,53 +80,55 @@
 }
 
 //Galerie
-.blocGalerie > div{
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-gap: 2rem;
-  > div{
-    max-height: 30rem;
-  }
-  > div:nth-of-type(8n + 1){
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-end: span 2;
-    max-height: 62rem;
-  }
-  > div:nth-of-type(8n + 2){
-    grid-column-start: 3;
-    grid-column-end: 7;
-    grid-row-end: span 1;
-  }
-  > div:nth-of-type(8n + 3){
-    grid-column-start: 3;
-    grid-column-end: 5;
-    grid-row-end: span 1;
-  }
-  > div:nth-of-type(8n + 4){
-    grid-column-start: 5;
-    grid-column-end: 7;
-    grid-row-end: span 1;
-  }
-  > div:nth-of-type(8n + 5){
-    grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row-end: span 1;
-  }
-  > div:nth-of-type(8n + 6){
-    grid-column-start: 4;
-    grid-column-end: 7;
-    grid-row-end: span 1;
-  }
-  > div:nth-of-type(8n + 7){
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-end: span 1;
-  }
-  > div:nth-of-type(8n + 8){
-    grid-column-start: 3;
-    grid-column-end: 7;
-    grid-row-end: span 1;
+@include respond-to("small-up"){
+  .blocGalerie > div{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 2rem;
+    > div{
+      max-height: 30rem;
+    }
+    > div:nth-of-type(8n + 1){
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-end: span 2;
+      max-height: 62rem;
+    }
+    > div:nth-of-type(8n + 2){
+      grid-column-start: 3;
+      grid-column-end: 7;
+      grid-row-end: span 1;
+    }
+    > div:nth-of-type(8n + 3){
+      grid-column-start: 3;
+      grid-column-end: 5;
+      grid-row-end: span 1;
+    }
+    > div:nth-of-type(8n + 4){
+      grid-column-start: 5;
+      grid-column-end: 7;
+      grid-row-end: span 1;
+    }
+    > div:nth-of-type(8n + 5){
+      grid-column-start: 1;
+      grid-column-end: 4;
+      grid-row-end: span 1;
+    }
+    > div:nth-of-type(8n + 6){
+      grid-column-start: 4;
+      grid-column-end: 7;
+      grid-row-end: span 1;
+    }
+    > div:nth-of-type(8n + 7){
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-end: span 1;
+    }
+    > div:nth-of-type(8n + 8){
+      grid-column-start: 3;
+      grid-column-end: 7;
+      grid-row-end: span 1;
+    }
   }
 }
 
@@ -136,11 +152,14 @@
     text-transform: uppercase;
     text-align: center;
   }
+  > div > div{
+    padding: 0 1rem;
+    margin-bottom: 3rem;
+  }
 }
 
 .blocGrille-case-image{
-  width: 25rem;
-  height: 25rem;
+  width: 90%;
   overflow: hidden;
   border-radius: 50%;
   margin: 0 auto 2rem;
@@ -158,9 +177,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    a{
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
     svg{
       font-size: 10rem;
       opacity: .5;
+    }
+    img{
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
     }
   }
   &-titre{
@@ -177,6 +208,9 @@
     max-height: 30rem;
     overflow: hidden;
     margin-bottom: 3rem;
+    img{
+      object-fit: cover;
+    }
   }
 }
 
@@ -276,12 +310,21 @@
   margin-bottom: 5rem;
 }
 
+//Vidéo
+.blocVideo iframe{
+  @include respond-to("small"){
+    max-height: 20rem;
+  }
+}
+
 //Vignette
 .blocAnnexeVignette{
   height: 30rem;
   overflow: hidden;
   margin-bottom: 2rem;
   img{
+    height: 100%;
+    width: 100%;
     object-fit: cover;
   }
 }

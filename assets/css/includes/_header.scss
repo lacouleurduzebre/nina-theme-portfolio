@@ -1,6 +1,9 @@
 //Menu principal
 .header_front{
   padding: 1rem 4rem;
+  @include respond-to("small"){
+    padding: 1rem;
+  }
   .blocMenu{
     display: none;
     position: absolute;
@@ -10,6 +13,7 @@
     max-width: 50rem;
     min-height: 100vh;
     background-color: rgba(32, 32, 32, 0.9);
+    z-index: 10;
     .connected &{
       top: 3.8rem;
     }
@@ -25,12 +29,13 @@
   ul{
     list-style: none;
     padding: 0;
+    text-align: center;
   }
   a{
     text-transform: uppercase;
     text-decoration: none;
     display: inline-block;
-    padding: 0 0 3rem 0;
+    padding: 0 0 1.5rem 0;
     position: relative;
     margin-top: 3rem;
     &:after{
@@ -59,11 +64,20 @@
     + div .blocMenu{
       padding: 10rem 1rem;
       display: block;
+      @include respond-to("small"){
+        padding: 5rem 1rem;
+      }
     }
   }
 }
 
 //Groupe de blocs header
+.header_front > .flex-container{
+  @include respond-to("small"){
+    flex-direction: row;
+  }
+}
+
 .header_front .groupeBlocs{
   display: flex;
   flex: 1;
@@ -74,6 +88,9 @@
   margin: auto;
   img{
     max-height: 9rem;
+    @include respond-to("medium"){
+      max-width: 9rem;
+    }
   }
 }
 
@@ -82,6 +99,11 @@
   display: flex;
   list-style: none;
   padding: 0;
+  @include respond-to("small"){
+    &.flex-container{
+      flex-direction: row;
+    }
+  }
   li{
     margin: 0 1rem;
     &.active a{

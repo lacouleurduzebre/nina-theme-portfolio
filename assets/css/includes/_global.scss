@@ -1,3 +1,8 @@
+//Titres
+h2, h3{
+  line-height: 1.2;
+}
+
 //Ariane
 #ariane{
   font-size: 1.4rem;
@@ -17,6 +22,9 @@
   border: 2px solid;
   text-decoration: none;
   transition: all .2s;
+  @include respond-to("small"){
+    margin: 2rem 0 0;
+  }
   &:hover{
     background-color: $color-brand;
     color: $white;
@@ -24,9 +32,29 @@
   }
 }
 
+.titre-page{
+  line-height: 1.1;
+  margin-bottom: 3rem;
+}
+
 //Textes étroits
 .titre-page, .blocTitre, .blocTexte, #ariane, .infos-page{
   padding: 0 5rem;
+  @include respond-to("medium"){
+    padding: 0 3rem;
+  }
+  @include respond-to("small"){
+    padding: 0 1rem;
+  }
+}
+
+main{
+  > div{
+    width: 100%;
+  }
+  @include respond-to("extra-large"){
+    padding: 0 1rem;
+  }
 }
 
 //Pagination
@@ -34,6 +62,9 @@
   margin: 3rem 0;
   ul{
     justify-content: center;
+    @include respond-to("small"){
+      flex-direction: row;
+    }
   }
   li{
     margin: 0 .5rem;

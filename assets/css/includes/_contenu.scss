@@ -8,5 +8,7 @@
 //Formulaires
 form > div > div{
   margin-bottom: 2rem;
-  width: 50%;
+  @include respond-to("medium-up"){
+    width: 50%;
+  }
 }
