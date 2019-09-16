@@ -56,3 +56,10 @@ $bp-aliases: (
         + "Please make sure it is defined in `$breakpoints` map.";
   }
 }
+
+@mixin centre{
+  max-width: $extra-large;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 2rem;
+}

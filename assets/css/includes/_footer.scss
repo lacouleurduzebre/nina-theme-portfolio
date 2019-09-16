@@ -1,26 +1,52 @@
 footer{
   background-color: $black;
-  padding: 5rem 1rem 10rem;
+  padding: 5rem 0 7rem;
   margin-top: 6.5rem;
-}
-
-//Cookies
-.cookies{
-  background-color: $black;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  padding: 2rem 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  p{
-    margin-bottom: 0;
+  h3{
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    font-weight: $weight-bold;
+    margin-bottom: 1rem;
+    display: inline-block;
+    border-bottom: 2px solid;
   }
 }
 
-//Menu du footer
+.groupeBlocs.footer{
+  @include centre;
+  text-align: center;
+}
+
+//Logo
+footer .blocLogoSite{
+  margin-bottom: 6.5rem;
+  img{
+    max-height: 8rem;
+  }
+}
+
+//Coordonnées
+footer .coordonnees{
+  width: 25%;
+  margin-left: 25%;
+}
+
+//Nous suivre
+footer .nousSuivre{
+  width: 25%;
+  margin-right: 25%;
+}
+
+//Réseaux sociaux
+footer .reseauxSociauxFooter{
+  font-size: 2.5rem;
+  width: 25%;
+  margin-left: 50%;
+  margin-right: 25%;
+  margin-top: -9rem;
+}
+
+//Menu
 footer .blocMenu{
   font-size: 1.5rem;
   margin: 6rem 0 3rem;
@@ -60,4 +86,20 @@ footer .blocMenu{
   font-size: 3rem;
   text-align: center;
   cursor: pointer;
+}
+
+//Cookies
+.cookies{
+  background-color: $black;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  p{
+    margin-bottom: 0;
+  }
 }
