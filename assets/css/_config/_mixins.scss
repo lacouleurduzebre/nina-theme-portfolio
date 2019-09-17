@@ -63,3 +63,22 @@ $bp-aliases: (
   margin-right: auto;
   padding: 0 2rem;
 }
+
+@mixin bouton{
+  background-color: $color-brand;
+  color: $white;
+  display: table;
+  margin: 2rem auto 0 auto;
+  padding: 1.5rem 2rem;
+  border: 2px solid;
+  text-decoration: none;
+  transition: all .2s;
+  @include respond-to("small"){
+    margin: 2rem 0 0;
+  }
+  &:hover{
+    background-color: $white;
+    color: $color-brand;
+    text-decoration: none;
+  }
+}

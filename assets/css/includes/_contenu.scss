@@ -1,8 +1,23 @@
+body:not(.accueil) main{
+  max-width: $extra-large;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 2rem;
+}
+
 //Infos de la page
 .infos-page{
   margin: 2rem 0 3rem;
   font-style: italic;
   font-size: 1.6rem;
+}
+
+.bouton-categorie{
+  display: inline-block;
+  margin: 0 .5rem;
+  svg{
+    margin-right: .3rem;
+  }
 }
 
 //Formulaires
@@ -11,4 +26,9 @@ form > div > div{
   @include respond-to("medium-up"){
     width: 50%;
   }
+}
+
+//Grilles
+.has-gutter-xl > *{
+  margin-bottom: 2rem;
 }

@@ -3097,8 +3097,8 @@ h2, h3 {
 }
 
 .bouton {
-  background-color: #fff;
-  color: #202020;
+  background-color: #202020;
+  color: #fff;
   display: table;
   margin: 2rem auto 0 auto;
   padding: 1.5rem 2rem;
@@ -3112,8 +3112,8 @@ h2, h3 {
   }
 }
 .bouton:hover {
-  background-color: #202020;
-  color: #fff;
+  background-color: #fff;
+  color: #202020;
   text-decoration: none;
 }
 
@@ -3158,6 +3158,9 @@ main > div {
 }
 .pagination li {
   margin: 0 0.5rem;
+}
+.pagination span {
+  opacity: 0.5;
 }
 
 .header_front {
@@ -3304,6 +3307,11 @@ footer h3 {
   margin-right: auto;
   padding: 0 2rem;
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+.groupeBlocs.footer > * {
+  width: 100%;
 }
 
 footer .blocLogoSite {
@@ -3313,22 +3321,58 @@ footer .blocLogoSite img {
   max-height: 8rem;
 }
 
-footer .coordonnees {
+.groupeBlocs.footer > .coordonnees {
   width: 25%;
   margin-left: 25%;
 }
+@media (max-width: 767px) {
+  .groupeBlocs.footer > .coordonnees {
+    width: 50%;
+    margin-left: 0;
+  }
+}
+@media (max-width: 479px) {
+  .groupeBlocs.footer > .coordonnees {
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+}
 
-footer .nousSuivre {
+.groupeBlocs.footer > .nousSuivre {
   width: 25%;
   margin-right: 25%;
 }
+@media (max-width: 767px) {
+  .groupeBlocs.footer > .nousSuivre {
+    width: 50%;
+    margin-right: 0;
+  }
+}
+@media (max-width: 479px) {
+  .groupeBlocs.footer > .nousSuivre {
+    width: 100%;
+  }
+}
 
-footer .reseauxSociauxFooter {
+.groupeBlocs.footer > .reseauxSociauxFooter {
   font-size: 2.5rem;
   width: 25%;
   margin-left: 50%;
   margin-right: 25%;
   margin-top: -9rem;
+}
+@media (max-width: 767px) {
+  .groupeBlocs.footer > .reseauxSociauxFooter {
+    width: 50%;
+    margin-right: 0;
+  }
+}
+@media (max-width: 479px) {
+  .groupeBlocs.footer > .reseauxSociauxFooter {
+    width: 100%;
+    margin-top: 0;
+    margin-left: 0;
+  }
 }
 
 footer .blocMenu {
@@ -3342,7 +3386,7 @@ footer .blocMenu ul {
   justify-content: center;
   text-align: center;
 }
-@media (max-width: 575px) {
+@media (max-width: 479px) {
   footer .blocMenu ul {
     flex-direction: column;
   }
@@ -3350,7 +3394,7 @@ footer .blocMenu ul {
 footer .blocMenu ul li {
   margin: 0 3rem;
 }
-@media (max-width: 575px) {
+@media (max-width: 479px) {
   footer .blocMenu ul li {
     margin: 1rem 0;
   }
@@ -3385,15 +3429,31 @@ footer .blocMenu ul li {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 100;
 }
 .cookies p {
   margin-bottom: 0;
+}
+
+body:not(.accueil) main {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 2rem;
 }
 
 .infos-page {
   margin: 2rem 0 3rem;
   font-style: italic;
   font-size: 1.6rem;
+}
+
+.bouton-categorie {
+  display: inline-block;
+  margin: 0 0.5rem;
+}
+.bouton-categorie svg {
+  margin-right: 0.3rem;
 }
 
 form > div > div {
@@ -3405,8 +3465,36 @@ form > div > div {
   }
 }
 
+.has-gutter-xl > * {
+  margin-bottom: 2rem;
+}
+
+body:not(.accueil) main > div[class^=bloc]:not(.blocTitre) {
+  margin-bottom: 5rem;
+}
+
+.blocAccordeon-titre {
+  background-color: #fff;
+  padding: 1rem 2rem;
+  margin-bottom: 2px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.8rem;
+  color: #202020;
+}
+
+.blocAccordeon-texte {
+  display: none;
+  padding: 2rem;
+}
+
 .blocAnnuaire {
   margin-bottom: 5rem;
+}
+.blocAnnuaire-utilisateur {
+  word-break: break-all;
 }
 
 .blocAnnuaire-utilisateur-image {
@@ -3417,6 +3505,7 @@ form > div > div {
   align-items: center;
   justify-content: center;
   margin: 0 auto 1rem;
+  background-color: #3a3a3a;
 }
 @media (max-width: 479px) {
   .blocAnnuaire-utilisateur-image {
@@ -3476,6 +3565,12 @@ form > div > div {
   .blocFormulaire-formulaire > div {
     width: 50%;
   }
+}
+.blocFormulaire-formulaire [type=text], .blocFormulaire-formulaire [type=email], .blocFormulaire-formulaire select {
+  height: 6.5rem;
+}
+.blocFormulaire-formulaire [type=text], .blocFormulaire-formulaire [type=text] textarea, .blocFormulaire-formulaire [type=email], .blocFormulaire-formulaire [type=email] textarea, .blocFormulaire-formulaire select, .blocFormulaire-formulaire select textarea {
+  font-size: 2rem;
 }
 .blocFormulaire-formulaire .bouton {
   display: inline-block;
@@ -3617,6 +3712,10 @@ form > div > div {
   object-fit: cover;
 }
 
+.blocPlanDuSite a {
+  font-size: 1.6rem;
+}
+
 .blocRecherche form {
   position: relative;
   display: inline-block;
@@ -3639,9 +3738,13 @@ form > div > div {
 }
 .blocReseauxSociaux a {
   margin: 0 0.5rem;
+  font-size: 2.5rem;
 }
 
-.blocSlider .slick-slide {
+body:not(.accueil) main > div[class^=bloc].blocSlider {
+  margin-bottom: 10rem;
+}
+body:not(.accueil) main > div[class^=bloc].blocSlider .slick-slide {
   display: flex;
   align-items: center;
   max-height: 40rem;
@@ -3649,7 +3752,7 @@ form > div > div {
   position: relative;
   height: 100%;
 }
-.blocSlider img {
+body:not(.accueil) main > div[class^=bloc].blocSlider img {
   width: 100%;
 }
 
@@ -3665,10 +3768,26 @@ form > div > div {
 
 .slick-prev, .slick-next {
   z-index: 100;
+  font-size: 0;
+  background: #FFF;
+  border-radius: 50%;
+  border: 0;
+  width: 4rem;
+  height: 4rem;
+  padding: 0;
+  top: calc(100% + 3rem);
+}
+.slick-prev:hover, .slick-next:hover {
+  background-color: #fff;
 }
 
 .slick-prev {
-  left: 1rem !important;
+  left: -5rem;
+}
+@media screen and (max-width: 120rem) {
+  .slick-prev {
+    left: 0;
+  }
 }
 .slick-prev:before {
   content: url("../img/flecheg.png") !important;
@@ -3676,11 +3795,20 @@ form > div > div {
 }
 
 .slick-next {
-  right: 1rem !important;
+  right: -5rem;
+}
+@media screen and (max-width: 120rem) {
+  .slick-next {
+    right: 0;
+  }
 }
 .slick-next:before {
   content: url("../img/fleched.png") !important;
   opacity: 1 !important;
+}
+
+.slick-dots {
+  bottom: -4rem;
 }
 
 .slick-dots li button::before, .slick-dots li.slick-active button::before {
@@ -3691,12 +3819,8 @@ form > div > div {
   font-size: 1.5rem !important;
 }
 
-.blocTitre {
-  margin-bottom: 2rem;
-}
-
 @media (max-width: 575px) {
-  .blocVideo iframe {
+  .blocVideo iframe, .blocVideos iframe {
     max-height: 20rem;
   }
 }

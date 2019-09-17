@@ -15,6 +15,11 @@ footer{
 .groupeBlocs.footer{
   @include centre;
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  > *{
+    width: 100%;
+  }
 }
 
 //Logo
@@ -26,24 +31,48 @@ footer .blocLogoSite{
 }
 
 //Coordonnées
-footer .coordonnees{
+.groupeBlocs.footer > .coordonnees{
   width: 25%;
   margin-left: 25%;
+  @include respond-to("medium"){
+    width: 50%;
+    margin-left: 0;
+  }
+  @include respond-to("tiny"){
+    width: 100%;
+    margin-bottom: 3rem;
+  }
 }
 
 //Nous suivre
-footer .nousSuivre{
+.groupeBlocs.footer > .nousSuivre{
   width: 25%;
   margin-right: 25%;
+  @include respond-to("medium"){
+    width: 50%;
+    margin-right: 0;
+  }
+  @include respond-to("tiny"){
+    width: 100%;
+  }
 }
 
 //Réseaux sociaux
-footer .reseauxSociauxFooter{
+.groupeBlocs.footer > .reseauxSociauxFooter{
   font-size: 2.5rem;
   width: 25%;
   margin-left: 50%;
   margin-right: 25%;
   margin-top: -9rem;
+  @include respond-to("medium"){
+    width: 50%;
+    margin-right: 0;
+  }
+  @include respond-to("tiny"){
+    width: 100%;
+    margin-top: 0;
+    margin-left: 0;
+  }
 }
 
 //Menu
@@ -56,12 +85,12 @@ footer .blocMenu{
     padding: 0;
     justify-content: center;
     text-align: center;
-    @include respond-to("small"){
+    @include respond-to("tiny"){
       flex-direction: column;
     }
     li{
       margin: 0 3rem;
-      @include respond-to("small"){
+      @include respond-to("tiny"){
         margin: 1rem 0;
       }
     }
@@ -99,6 +128,7 @@ footer .blocMenu{
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 100;
   p{
     margin-bottom: 0;
   }

@@ -14,22 +14,7 @@ h2, h3{
 
 //Boutons
 .bouton{
-  background-color: $white;
-  color: $color-brand;
-  display: table;
-  margin: 2rem auto 0 auto;
-  padding: 1.5rem 2rem;
-  border: 2px solid;
-  text-decoration: none;
-  transition: all .2s;
-  @include respond-to("small"){
-    margin: 2rem 0 0;
-  }
-  &:hover{
-    background-color: $color-brand;
-    color: $white;
-    text-decoration: none;
-  }
+  @include bouton;
 }
 
 .titre-page{
@@ -70,5 +55,8 @@ main{
   }
   li{
     margin: 0 .5rem;
+  }
+  span{
+    opacity: .5;
   }
 }

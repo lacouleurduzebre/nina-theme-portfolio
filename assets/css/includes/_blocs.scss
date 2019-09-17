@@ -1,6 +1,31 @@
+body:not(.accueil) main > div[class^=bloc]:not(.blocTitre){
+  margin-bottom: 5rem;
+}
+
+//Accordéon
+.blocAccordeon-titre{
+  background-color: $white;
+  padding: 1rem 2rem;
+  margin-bottom: 2px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.8rem;
+  color: $color-brand;
+}
+
+.blocAccordeon-texte{
+  display: none;
+  padding: 2rem;
+}
+
 //Annuaire
 .blocAnnuaire{
   margin-bottom: 5rem;
+  &-utilisateur{
+    word-break: break-all;
+  }
 }
 
 .blocAnnuaire-utilisateur-image{
@@ -11,6 +36,7 @@
   align-items: center;
   justify-content: center;
   margin: 0 auto 1rem;
+  background-color: lighten($color-brand, 10);
   @include respond-to("tiny"){
     width: 100%;
   }
@@ -63,6 +89,12 @@
     margin-bottom: 2rem;
     @include respond-to("medium-up"){
       width: 50%;
+    }
+  }
+  [type=text], [type=email], select{
+    height: 6.5rem;
+    &, textarea{
+      font-size: 2rem;
     }
   }
   .bouton{
@@ -214,6 +246,13 @@
   }
 }
 
+//Plan du site
+.blocPlanDuSite{
+  a{
+    font-size: 1.6rem;
+  }
+}
+
 //Recherche
 .blocRecherche{
   form{
@@ -239,11 +278,13 @@
   font-size: 2rem;
   a{
     margin: 0 .5rem;
+    font-size: 2.5rem;
   }
 }
 
 //Slider
-.blocSlider{
+body:not(.accueil) main > div[class^=bloc].blocSlider{
+  margin-bottom: 10rem;
   .slick-slide{
     display: flex;
     align-items: center;
@@ -269,10 +310,24 @@
 
 .slick-prev, .slick-next{
   z-index: 100;
+  font-size: 0;
+  background: #FFF;
+  border-radius: 50%;
+  border: 0;
+  width: 4rem;
+  height: 4rem;
+  padding: 0;
+  top: calc(100% + 3rem);
+  &:hover{
+    background-color: $white;
+  }
 }
 
 .slick-prev{
-  left: 1rem !important;
+  left: -5rem;
+  @media screen and (max-width: 120rem){
+    left: 0;
+  }
   &:before{
     content: url('../img/flecheg.png') !important;
     opacity: 1 !important;
@@ -280,11 +335,18 @@
 }
 
 .slick-next{
-  right: 1rem !important;
+  right: -5rem;
+  @media screen and (max-width: 120rem){
+    right: 0;
+  }
   &:before{
     content: url('../img/fleched.png') !important;
     opacity: 1 !important;
   }
+}
+
+.slick-dots{
+  bottom: -4rem;
 }
 
 .slick-dots li button::before, .slick-dots li.slick-active button::before{
@@ -295,15 +357,12 @@
   font-size: 1.5rem !important;
 }
 
-//Titre
-.blocTitre{
-  margin-bottom: 2rem;
-}
-
 //Vidéo
-.blocVideo iframe{
-  @include respond-to("small"){
-    max-height: 20rem;
+.blocVideo, .blocVideos{
+  iframe{
+    @include respond-to("small"){
+      max-height: 20rem;
+    }
   }
 }
 
